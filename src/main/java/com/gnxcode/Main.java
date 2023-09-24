@@ -13,14 +13,14 @@ import java.sql.*;
 public class Main {
     public static void main2(String[] args) throws SQLException {
 
-        try(Connection myConn = DatabaseConnection.getInstance()){
+        /*try(Connection myConn = DatabaseConnection.getInstance()){
             Repository<Employee> employeeRepository = new EmployeeRepository(myConn);
 
             System.out.println("----List employee ----");
             employeeRepository.findAll().forEach(System.out::println);
 
             //System.out.println(employeeRepository.getById(4));
-            /*System.out.println("-----Insert employee-----");
+            *//*System.out.println("-----Insert employee-----");
             Employee employee = new Employee();
             employee.setId(7);
             employee.setFirst_name("Diego");
@@ -28,14 +28,14 @@ public class Main {
             employee.setMa_surname("Pimentel");
             employee.setEmail("elmaradona@example.com");
             employee.setSalary((float) 2000);
-            employeeRepository.save(employee);*/
+            employeeRepository.save(employee);*//*
 
             System.out.println("----employee deleted----");
             employeeRepository.delete(6);
 
             System.out.println("----List employee reload ----");
             employeeRepository.findAll().forEach(System.out::println);
-        }
+        }*/
     }
 
     /*public static void main3(String[] args) {
@@ -43,8 +43,8 @@ public class Main {
         app.setVisible(true);
     }*/
 
-    public static void main(String[] args) throws SQLException {
-        try(Connection connection = DatabaseConnection.getInstance()) {
+    public static void main4(String[] args) throws SQLException {
+        /*try(Connection connection = DatabaseConnection.getInstance()) {
             if(connection.getAutoCommit()){
                 connection.setAutoCommit((false));
             }
@@ -54,14 +54,14 @@ public class Main {
 
                 System.out.println("-----Insert employee-----");
                 Employee employee = new Employee();
-                /*employee.setFirst_name("Armando");
+                *//*employee.setFirst_name("Armando");
                 employee.setPa_surname("Elias");
                 employee.setMa_surname("Almo");
                 employee.setEmail("armando@example.com");
                 employee.setSalary((float) 2000);
                 employee.setCurp("QWE12343AS322123");
                 employeeRepository.save(employee);
-                connection.commit();*/
+                connection.commit();*//*
 
                 employee.setFirst_name("David");
                 employee.setPa_surname("Gutiereex");
@@ -76,6 +76,15 @@ public class Main {
                 connection.rollback();
                 throw new RuntimeException(e);
             }
-        }
+        }*/
+    }
+
+    public static void main(String[] args) throws SQLException {
+        System.out.println("-----List employees-----");
+        Repository<Employee> employeeRepository = new EmployeeRepository();
+        employeeRepository.findAll().forEach(System.out::println);
+
+        System.out.println("-----Search employee-----");
+        System.out.println(employeeRepository.getById(5));
     }
 }
