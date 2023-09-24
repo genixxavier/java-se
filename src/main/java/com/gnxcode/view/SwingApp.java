@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 public class SwingApp extends JFrame {
 
-    private final Repository<Employee> employeeRepository;
+    /*private final Repository<Employee> employeeRepository;
     private final JTable employeeTable;
 
     public SwingApp() {
@@ -51,7 +51,7 @@ public class SwingApp extends JFrame {
         eliminarButton.setFocusPainted(false);
 
         // Crear el objeto Repository para acceder a la base de datos
-        employeeRepository = new EmployeeRepository();
+        employeeRepository = new EmployeeRepository(connection);
 
         // Cargar los empleados iniciales en la tabla
         refreshEmployeeTable();
@@ -214,5 +214,5 @@ public class SwingApp extends JFrame {
                 throw new RuntimeException(e);
             }
         }
-    }
+    }*/
 }
